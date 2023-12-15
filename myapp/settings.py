@@ -69,6 +69,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
+    "backend-production-c4bf.up.railway.app"
     
 ]
 
