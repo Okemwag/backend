@@ -29,7 +29,7 @@ DEBUG = True
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["backend-production-c4bf.up.railway.app, 127.0.0.1"]
 #ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
@@ -118,18 +118,17 @@ DATABASES = {
 }
 
 
-"""
 DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
-        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE",  "db"),
         "USER": os.environ.get("SQL_USER", "user"),
         "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
         "HOST": os.environ.get("SQL_HOST", "postgres"),
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
-"""
+
 
 
 # Password validation
@@ -201,3 +200,5 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-3640.up.railway.app']
