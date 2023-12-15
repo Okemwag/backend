@@ -1,6 +1,6 @@
 # properties/urls.py
 from django.urls import path
-from .views import PropertyForSaleView,PropertyForRentView, PropertyDetailView, VideoTourView
+from .views import PropertyForSaleView, PropertyForRentView, PropertyDetailView, VideoTourView
 
 
 urlpatterns = [

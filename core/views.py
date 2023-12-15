@@ -9,7 +9,6 @@ class PropertyForSaleView(generics.ListAPIView):
     """
     serializer_class = PropertySerializer
 
-    @cache_page(60 * 60)  
     def get_queryset(self):
         return Property.objects.filter(property_status='For Sale').order_by('-created')
 
@@ -20,7 +19,6 @@ class PropertyForRentView(generics.ListAPIView):
     """
     serializer_class = PropertySerializer
 
-    @cache_page(60 * 60)  
     def get_queryset(self):
         return Property.objects.filter(property_status='For Rent').order_by('-created')
 
@@ -33,10 +31,6 @@ class PropertyDetailView(generics.RetrieveAPIView):
     queryset = Property.objects.all()
     lookup_field = 'id'
 
-    @cache_page(60 * 60)  
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
-
 
 class VideoTourView(generics.RetrieveAPIView):
     """
@@ -45,7 +39,3 @@ class VideoTourView(generics.RetrieveAPIView):
     serializer_class = VideoTourSerializer
     queryset = VideoTour.objects.all()
     lookup_field = 'id'
-
-    @cache_page(60 * 60)  
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
