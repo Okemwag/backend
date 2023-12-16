@@ -29,7 +29,7 @@ DEBUG = False
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
-ALLOWED_HOSTS = ["backend-production-c4bf.up.railway.app, 127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 #ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
@@ -69,7 +69,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
-    "backend-production-c4bf.up.railway.app",
+    "https://backend-production-c4bf.up.railway.app",
+    "https://luxconsult-production.up.railway.app",
     
 ]
 
@@ -109,15 +110,16 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
 
+
+"""
 DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
@@ -128,7 +130,7 @@ DATABASES = {
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
-
+"""
 
 
 # Password validation
